@@ -5,10 +5,9 @@ services:
 
 before_install:
   - docker build -t travistest .
-  - docker run travistest
 
 script:
-  - id
-  - uname -a
-  - ps aux
-  - lsb_release -a
+  - docker run travistest id
+  - docker run travistest uname -a
+  - docker run travistest ps aux
+  - docker run travistest lsb_release -a
