@@ -12,6 +12,6 @@ env:
 - SUITE="aaa" OPTS="bbb"
 
 script:
-- docker run -e VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh -e SUITE="$SUITE" -e OPTS="$OPTS" --rm travistest /bin/bash bash -c env
-- docker run -e VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh -e SUITE="$SUITE" -e OPTS="$OPTS" --rm travistest /bin/bash bash -c "echo -- $OPTS $SUITE"
+- docker run -e VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh -e SUITE="$SUITE" -e OPTS="$OPTS" --rm travistest /bin/bash -c env
+- docker run -e VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh -e SUITE="$SUITE" -e OPTS="$OPTS" --rm travistest /bin/bash -c "echo -- $OPTS $SUITE"
 
