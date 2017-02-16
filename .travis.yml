@@ -5,7 +5,7 @@ services:
 
 before_install:
   - docker build -t travistest .
-#  - docker run travistest
+  - docker run travistest
 
 script:
   - id
