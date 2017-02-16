@@ -13,4 +13,4 @@ RUN apt-get -y install git virtualenvwrapper
 USER ctf
 
 WORKDIR /home/ctf
-ENTRYPOINT bash -i
+CMD bash -i
