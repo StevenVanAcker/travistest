@@ -1,3 +1,16 @@
-FROM ubuntu:xenial
+from ubuntu:xenial
 
-RUN echo hello world
+RUN apt-get update && apt-get install -y build-essential libtool g++ gcc \
+    texinfo curl wget automake autoconf python python-dev git subversion \
+    unzip virtualenvwrapper sudo
+
+RUN useradd -m ctf
+
+RUN echo "ctf ALL=NOPASSWD: ALL" > /etc/sudoers.d/ctf
+RUN apt-get update
+RUN apt-get -y install git virtualenvwrapper
+
+USER ctf
+
+WORKDIR /home/ctf
+ENTRYPOINT bash -i
